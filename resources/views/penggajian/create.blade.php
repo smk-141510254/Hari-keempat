@@ -17,14 +17,18 @@
                      <form class="form-horizontal" role="form" method="POST" action="{{ url('/penggajian') }}">
 
                         {{ csrf_field() }}
+
+
+
                             <div class="col-md-12">
 
                                 <label for="Jabatan">Nama Pegawai</label>
 
                                     <select class="col-md-6 form-control" name="tunjangan_pegawai_id">
 
-                                        @foreach($tunjangan as $data)
-                                            <option  value="{{$data->id}}" >{{$data->pegawai->User->name}}</option>
+                                        @foreach($tunjangan as $tunjangans)
+
+                                            <option  value="{{$tunjangans->id}}" >{{$tunjangans->pegawai->User->name}}</option>
 
                                         @endforeach
 
